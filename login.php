@@ -4,7 +4,7 @@
 	if(isset($_POST['Submit'])){
 		/* Define username and associated password array */
 		/* You can change username and associated password array to your pref*/
-		$logins = array('Minh' => 'gsuweb123','username1' => 'password1','username2' => 'password2');
+		$logins = array('Minh' => 'gsuweb123','Brett' => '123456','Ursman' => '123456');
 		
 		/* Check and assign submitted Username and Password to new variable */
 		$Username = isset($_POST['Username']) ? $_POST['Username'] : '';
