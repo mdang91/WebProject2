@@ -10,16 +10,16 @@ if(!isset($_SESSION['UserData']['Username'])){
 <head>
 <!-- Welcome page -->
 <meta charset="UTF-8">
-<title>Find your half</title>
+<title>Welcome</title>
 <link href="nerdieluv.css" type="text/css" rel="stylesheet" />
 <link href="./Pics/heart.png" type="image/gif" rel="shortcut icon" />
 </head>
 <body>
 <div>
 <div>
-<img src="./Pics/nerdluv.png" alt="image" />
+<img src="./Pics/logo.png" alt="image" />
 </div>
-<h1>Welcome!</h1>
+<h1>Welcome back <?= $_SESSION['Username']?>!</h1>
 <div class="div1">
 <ul>
 <li><a href="signup.php"><img class="img1" src="./Pics/signup1.png" alt="icon" />

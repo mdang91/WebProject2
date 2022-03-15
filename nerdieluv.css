@@ -28,16 +28,30 @@ a img {
 
 body {
 	padding-left: 1em;
-	background-color: white;
+	background: #1B323A;
+	background: -moz-linear-gradient(left, #1B323A 0%, #1C6EA4 50%, #1B323A 100%);
+	background: -webkit-linear-gradient(left, #1B323A 0%, #1C6EA4 50%, #1B323A 100%);
+	background: linear-gradient(to right, #1B323A 0%, #1C6EA4 50%, #1B323A 100%);
 }
 
-body > div, form {
+.table1{
+	background-color: #294d5c;
+	color: white;
+	border-radius:5px;
+}
+
+form{
 	overflow: hidden;
-	width: 35em;
+	display: grid;
+    justify-content: space-evenly;
 }
 
 div {
 	overflow: hidden;
+    display: grid;
+    justify-content: space-evenly;
+    width: auto;
+    padding-top: 5em;
 }
 
 /* form styles */
@@ -77,9 +91,10 @@ h1 {
 }
 
 input[type="submit"] {
-	background-color: #FAA;
+	background-color: gray;
 	font-size: 120%;
 	font-weight: bold;
+	color:white;
 }
 
 legend {

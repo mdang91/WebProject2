@@ -14,6 +14,7 @@
 		if (isset($logins[$Username]) && $logins[$Username] == $Password){
 			/* Success: Set session variables and redirect to Protected page  */
 			$_SESSION['UserData']['Username']=$logins[$Username];
+			$_SESSION['Username'] = $Username;
 			header("location:index.php");
 			exit;
 		} else {
@@ -26,17 +27,17 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Welcome to nerdLuv</title>	
+<title>Game4U Login</title>	
 <link href="./css/style.css" rel="stylesheet">
 <link href="nerdieluv.css" type="text/css" rel="stylesheet" />
 <link href="./Pics/heart.png" type="image/gif" rel="shortcut icon" />
 </head>
 <body>
 <div>
-<img src="./Pics/nerdluv.png" alt="image" />
+<img src="./Pics/logo.png" alt="image" />
 </div>
 <form action="" method="post" name="Login_Form">
-  <table width="400" border="0" align="center" cellpadding="5" cellspacing="1" class="Table">
+  <table class="table1" width="400" border="0" align="center" cellpadding="5" cellspacing="1">
     <?php if(isset($msg)){?>
     <tr>
       <td colspan="2" align="center" valign="top"><?php echo $msg;?></td>
