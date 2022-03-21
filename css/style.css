@@ -7,15 +7,7 @@ body {
 	background: -webkit-linear-gradient(left, #1B323A 0%, #1C6EA4 50%, #1B323A 100%);
 	background: linear-gradient(to right, #1B323A 0%, #1C6EA4 50%, #1B323A 100%);
 }
-a {
-	-moz-user-select: none;
-	color: #1155CC !important;
-	font-family: "verdana", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	text-decoration: none;
-}
-a:hover {
-	text-decoration: underline;
-}
+
 h3 {
 	margin:0;
 	padding:10px 5px 10px 5px;
@@ -30,7 +22,6 @@ h3 {
 .Button3 {
 	border-style: solid;
 	border-width: 1px;
-	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 	cursor: pointer;
 	display: inline-block;
 	font-size: 11px;
@@ -72,7 +63,7 @@ h3 {
 	font-size: 11px;
 	margin: 0;
 	padding: 5px;
-	width: 200px;
+	width: 230px;
 	background-color: #294d5c;
 	color: white;
 }
@@ -85,4 +76,5 @@ h3 {
 }
 .Table td {
 	background-color: #F8F8F8;
+	width:50px;
 }

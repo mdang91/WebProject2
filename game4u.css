@@ -1,17 +1,12 @@
-/*
-Assignment 04: NerdLuv
-You should link to this provided stylesheet from all of your pages.
-You should not need to modify this file.  Your pages should work with it as-is.
-*/
-
 * {
 	font-size: 12pt;
 	font-family: "Verdana", "Geneva", sans-serif;
+	margin:0px;
 }
 
 a {
 	color: #F44;
-	text-decoration: none;
+	text-decoration: underline;
 }
 
 a:hover {
@@ -27,7 +22,6 @@ a img {
 }
 
 body {
-	padding-left: 1em;
 	background: #1B323A;
 	background: -moz-linear-gradient(left, #1B323A 0%, #1C6EA4 50%, #1B323A 100%);
 	background: -webkit-linear-gradient(left, #1B323A 0%, #1C6EA4 50%, #1B323A 100%);
@@ -46,7 +40,7 @@ form{
     justify-content: space-evenly;
 }
 
-div {
+.div0{
 	overflow: hidden;
     display: grid;
     justify-content: space-evenly;
@@ -56,51 +50,136 @@ div {
 
 /* form styles */
 fieldset {
-	background-color: #E0E0FF;
-	border: 2px outset gray;
+	background-color: #294d5c;
 	border-radius: 10px;
+	color:white;
+	border:0px;
 }
-
+.banner{
+	display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+	background-color: #0896B2;
+	height:90px;
+	width:100%;
+	box-shadow: 5px 5px 15px 5px #4C60FF;
+	border-bottom: 4px outset #1C35A4;
+}
+.app{
+	background: linear-gradient(to left, #2C5364, #203A43, #0F2027);
+	height:90px;
+	width:100%;
+}
+#bannertext{
+	grid-column:5;
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+}
 .div1{
-	padding-left: 1.5em;
 	padding-top: .5em;
-	background-color: #E0E0FF;
+	background-color: #77afd3;
 	border: 2px outset gray;
 	border-radius: 10px;
+	width:20%;
+	margin: auto;
+	padding: 10px;
+	text-align:center;
+}
+.div2{
+	padding-top: .5em;
+}
+.div3{
+	display:contents;
+}
+.div4{
+	margin-top:5px;
+	width:40%;
+	margin:auto;
+	background-color: #EEDA83;
+	border-radius: 10px;
+	padding-bottom: .5em;
 }
 .error{
-	padding-left: 1.5em;
 	padding-top: .5em;
 	background-color: #FDB397;
 	border: 2px outset gray;
 	border-radius: 10px;
 	padding-bottom: .5em;
+	width:20%;
+	margin:auto;
+}
+.ul1{
+    display:flex;
+	list-style:none;
+}
+.li1{
+    margin-right:3em;
+    margin-bottom:0;
+	font-size:20px;
 }
 
+.ul2{
+	font-size:9pt;
+	list-style-type: decimal;
+	color: #205B9E;
+}
+.li2{
+    margin-left:3em;
+    margin-bottom:0;
+	font-size:20px;
+}
+ 
 /* the bold text labels to the left of each form field */
 fieldset strong,
 ul strong,
 fieldset label.left,
 fieldset .column {
 	float: left;
-	width: 11em;
+	width: 7em;
 }
 
 h1 {
 	margin-top: 0em;
 }
+#h11{
+	text-align:center;
+}
+#h12{
+	text-align:center;
+	font-size: 36pt;
+	color: #205B9E;
+}
 
-input[type="submit"] {
+#p1{
+	margin-left: 10px;
+}
+#p2{
+	text-align: center;
+}
+input[type="submit"]{
 	background-color: gray;
 	font-size: 120%;
 	font-weight: bold;
 	color:white;
 }
+input[type="submit1"]{
+	background-color: transparent;
+	color:white;
+}
 
-legend {
+.signup{
+	border:0px;
+	border-radius:2px;
+	margin-left:35%;
+}
+
+legend{
 	background-color: white;
 	border: 2px outset gray;
 	padding: 0.2em;
+	color: black;
+	font-weight:bold;
+	margin:auto;
 }
 
 .match {
@@ -119,35 +198,32 @@ legend {
 	clear: left;
 }
 
-.match ul {
+.match ul{
 	padding-left: 10px;
 	margin-right:100px;
 }
 
-ul {
+ul{
 	list-style-type: none;
 	padding-left: 0em;
 }
-#ul1 {
+
+#ul1{
 	list-style-type: disc;
 	padding-left: 1.5em;
 }
 
-ul li a img {
+ul li a img{
 	vertical-align: middle;
 }
 
-#w3c {
+#w3c{
 	clear: both;
 }
 .img1{
 	width:40px;
 	height:40px;
 	background: #E0E0FF;
-	vertical-align: middle;
+	margin-left:5px;
+	margin-right:5px;
 }
-legend{
-	color: #DA0576;
-	font-weight:bold;
-}
-
