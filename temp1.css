@@ -6,9 +6,13 @@ body {
 	background: -moz-linear-gradient(left, #1B323A 0%, #1C6EA4 50%, #1B323A 100%);
 	background: -webkit-linear-gradient(left, #1B323A 0%, #1C6EA4 50%, #1B323A 100%);
 	background: linear-gradient(to right, #1B323A 0%, #1C6EA4 50%, #1B323A 100%);
+	color: white;
 }
 button {
 	font-family: 'Michroma', sans-serif;
+}
+h3{
+	margin:0;
 }
 #logo {
 	text-align: center;
@@ -39,6 +43,37 @@ button {
 	border-radius: 10px;
 	border: 3px solid #DDD;
 }
+
+.boxpick {
+	position: relative;
+	width: 20%;
+	margin: 1% 1%;
+	height: 8.5vh;
+	background: #CA7713;
+	display: inline-block;
+	text-align: center;
+	transition: all 0.5s;
+	line-height: 8.5vh;
+	color: #b50600;
+	font-weight: 900;
+	border-radius: 10px;
+	border: 3px solid #DDD;
+}
+.boxopened {
+	position: relative;
+	width: 20%;
+	margin: 1% 1%;
+	height: 8.5vh;
+	background: transparent;
+	display: inline-block;
+	text-align: center;
+	transition: all 0.5s;
+	line-height: 8.5vh;
+	color: white;
+	font-weight: 900;
+	border-radius: 10px;
+	border: 3px solid #DDD;
+}
 .box:hover {
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6), 0 6px 20px 0 rgba(0,0,0,0.6);
 	border: 3px solid #c8a913;
@@ -58,9 +93,15 @@ button {
 	display: inline-block;
 	position: fixed;
   	width: 17vw;
-  	top: 10vh;	
+  	top: 10vh;
+	border-radius:10px;
 }
-.moneyShow {
+.moneyleft{
+	color: #FFF;
+	font-weight: 900;
+	transition: all 1s;
+	background-color: #50589b;
+	border-radius: 10px;
 	width: 100%;
 	height: 6vh;
 	line-height: 6vh;
@@ -68,9 +109,20 @@ button {
 	border: 2px solid #c8a913;
 	position: relative;
 	text-align: center;
+}
+.moneyright{
 	color: #FFF;
 	font-weight: 900;
 	transition: all 1s;
+	background-color: #914242;
+	border-radius: 10px;
+	width: 100%;
+	height: 6vh;
+	line-height: 6vh;
+	margin-bottom: 0.3vh;
+	border: 2px solid #c8a913;
+	position: relative;
+	text-align: center;
 }
 .hideValue {
 	text-indent: 100%;
@@ -123,6 +175,13 @@ button {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+.div5{
+	display: grid;
+    justify-content: center;
+    align-content: center;
+    gap: 4px;
+    grid-auto-flow: column;
 }
 #bankContent, #finishedContent, #lastDealContent, #chooseBoxContent {
 	background-color: #FFF;
@@ -220,12 +279,27 @@ button:hover {
 	font-size: 20px;
 }
 .text {
-	font-size: 15px;
+	font-size: 20px;
 }
 #winnings {
 	padding: 20px;
 	font-weight: 900;
 	font-size: 60px;
+}
+#h11{
+	text-align:center;
+	margin:0px;
+	padding:0px;
+}
+#leaderboard{
+	margin-left: 50px;
+    width: 400px;
+    background: rgb(253 253 255 / 85%);
+    border-radius: 10px;
+    color: red;
+    padding-top: 5px;
+	padding-left: 10px;
+	font-size:20px;
 }
 #seeTutorialButton {
 	background: #c8a913;
@@ -240,14 +314,13 @@ button:hover {
 	transition: all 0.5s;
 }
 #tutorial {
-	display: none;
-	position: absolute;
-	top: 0px;
-	width: 100vw;
-	height: 100vh;
-	background: rgba(255,255,255,0.85);
-	z-index: 1;
-	padding-top: 100px;
+	width: 600px;
+    background: rgb(253 253 255 / 85%);
+    margin: auto;
+    border-radius: 10px;
+    color: red;
+    padding-bottom: 5px;
+    padding-top: 5px;
 }
 #tutorialButton {
 	background: #c8a913;

@@ -47,12 +47,13 @@ if(!isset($_SESSION['UserData']['Username'])){
 <div class="div4">
 <h1 id="h12"> Game List </h1>
 <ul class="ul2">
-	<li class="li2"><a href="#">Deal or No Deal</a></li>
-	<li class="li2"><a href="#">More Game comming</a></li>
-	<li class="li2"><a href="#">More Game comming</a></li>
-	<li class="li2"><a href="#">More Game comming</a></li>
+	<li class="li2"><a href="temp1.php">Deal or No Deal</a></li>
+	<li class="li2"><a href="#">...</a></li>
+	<li class="li2"><a href="#">...</a></li>
+	<li class="li2"><a href="#">...</a></li>
 </ul>
 </div>
+
 
 </body>
 </html>

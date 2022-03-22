@@ -1,0 +1,5 @@
+Ladygaga,750000
+NoStar,250000
+Killer,750
+Killer,0
+Killer,300000

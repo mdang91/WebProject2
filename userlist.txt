@@ -1,6 +1,2 @@
-Minh,gsuweb123,Killer
-Brian,123,Strike100
 asd,asd,asd
-Harry,123,Cocacola
-Loius,123,Tom
-Jerry,123,Chuot
+Minh,gsuweb123,Killer

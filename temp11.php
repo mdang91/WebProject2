@@ -1,3 +1,10 @@
+<?php session_start(); /* Starts the session */
+
+if(!isset($_SESSION['UserData']['Username'])){
+	header("location:login.php");
+	exit;
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,63 +13,143 @@
 
 </head>
 <body>
-	<div id="logo">
-		<img class="logoImg" src="./Pics/don.png">
+<?php
+
+$status = $_SESSION['Status'];
+$status1 = $_SESSION['StatusTemp'];
+if($_SESSION['Unique'] == 1){
+	for($i = 0; $i <= 25; ++$i){
+		$check = isset($_POST['box'.($i+1).'']) ? "checked" : "unchecked";
+		if(strcmp($check, "checked") == 0){
+			$status[$i] = 2;
+			$status1[$i] = 2;
+			$_SESSION['Unique'] += 1;
+		}
+	}
+}
+for($i = 0; $i <= 25; ++$i){
+	$check = isset($_POST['box'.($i+1).'']) ? "checked" : "unchecked";
+	if((strcmp($check, "checked") == 0) && ($status[$i] == 0)){
+		$status[$i] = 1;
+		$status1[$i] = 1;
+		$_SESSION['Count'] += 1;
+	}
+}
+
+$_SESSION['Status'] = $status;
+$value = $_SESSION['Value'];
+$count = $_SESSION['Count'];
+?>
+
+<?php
+//bank
+if($count == 6 || $count == 11 || $count == 15 || $count == 18 || $count == 21)
+{
+	echo ('<h1 id="h11">Bank has offer</h1>');
+?>
+<div id="bank">
+	<div id="bankContent">
+		<div class="bankTitle">The bank offers you:</div>
+		<div class="bankOffer"></div>
+		<button id="yesDeal" class="buttons">Deal</button>
+		<button id="noDeal" class="buttons">No Deal</button>
+		<div id="prevOffers">Previous Offers: none</div>
 	</div>
-	<div id="boxContainer">
-		<div class="box"><span class="boxNr">1</span><span class="boxValue"></span></div>
-		<div class="box"><span class="boxNr">2</span><span class="boxValue"></span></div>
-		<div class="box"><span class="boxNr">3</span><span class="boxValue"></span></div>
-		<div class="box"><span class="boxNr">4</span><span class="boxValue"></span></div>
-		<div class="box"><span class="boxNr">5</span><span class="boxValue"></span></div>
-		<div class="box"><span class="boxNr">6</span><span class="boxValue"></span></div>
-		<div class="box"><span class="boxNr">7</span><span class="boxValue"></span></div>
-		<div class="box"><span class="boxNr">8</span><span class="boxValue"></span></div>
-		<div class="box"><span class="boxNr">9</span><span class="boxValue"></span></div>
-		<div class="box"><span class="boxNr">10</span><span class="boxValue"></span></div>
-		<div class="box"><span class="boxNr">11</span><span class="boxValue"></span></div>
-		<div class="box"><span class="boxNr">12</span><span class="boxValue"></span></div>
-		<div class="box"><span class="boxNr">13</span><span class="boxValue"></span></div>
-		<div class="box"><span class="boxNr">14</span><span class="boxValue"></span></div>
-		<div class="box"><span class="boxNr">15</span><span class="boxValue"></span></div>
-		<div class="box"><span class="boxNr">16</span><span class="boxValue"></span></div>
-		<div class="box"><span class="boxNr">17</span><span class="boxValue"></span></div>
-		<div class="box"><span class="boxNr">18</span><span class="boxValue"></span></div>
-		<div class="box"><span class="boxNr">19</span><span class="boxValue"></span></div>
-		<div class="box"><span class="boxNr">20</span><span class="boxValue"></span></div>
-		<div class="box"><span class="boxNr">21</span><span class="boxValue"></span></div>
-		<div class="box"><span class="boxNr">22</span><span class="boxValue"></span></div>
-		<div class="box"><span class="boxNr">23</span><span class="boxValue"></span></div>
-		<div class="box"><span class="boxNr">24</span><span class="boxValue"></span></div>
-	</div>
-	<div id="smallMoneys" class="moneys">
-		<div class="moneyShow"></div>
-		<div class="moneyShow"></div>
-		<div class="moneyShow"></div>
-		<div class="moneyShow"></div>
-		<div class="moneyShow"></div>
-		<div class="moneyShow"></div>
-		<div class="moneyShow"></div>
-		<div class="moneyShow"></div>
-		<div class="moneyShow"></div>
-		<div class="moneyShow"></div>
-		<div class="moneyShow"></div>
-		<div class="moneyShow"></div>
-	</div>
-	<div id="bigMoneys" class="moneys">
-		<div class="moneyShow"></div>
-		<div class="moneyShow"></div>
-		<div class="moneyShow"></div>
-		<div class="moneyShow"></div>
-		<div class="moneyShow"></div>
-		<div class="moneyShow"></div>
-		<div class="moneyShow"></div>
-		<div class="moneyShow"></div>
-		<div class="moneyShow"></div>
-		<div class="moneyShow"></div>
-		<div class="moneyShow"></div>
-		<div class="moneyShow"></div>
-	</div>
+</div>
+<?php
+}
+if($count == 24)
+{
+	echo ('<h1 id="h11">Do you want to change the box?</h1>');
+	for($i = 0; $i <= 25; ++$i){
+		if($status[$i] == 2){
+			$status[$i] = 0;
+		}
+	}
+}
+$_SESSION['Status'] = $status;
+function bankoffer(){
+  
+}
+?>
+<div id="logo">
+	<img class="logoImg" src="./Pics/don.png">
+</div>
+<form action="" method="post" id="boxContainer">
+<?php
+$clearvalue = 0;
+for($i = 0; $i <= 25; ++$i){
+	//not open box
+	if($status[$i] == 0){
+		echo('<div class="box">'.($i+1).'<input name="box'.($i+1).'" type="checkbox" value="'.$value[$i].'"></div>');
+	}
+	//picked box
+	elseif($status[$i] == 2){
+		echo('<div class="boxpick">'.($i+1).'<input name="box'.($i+1).'" type="checkbox" value="'.$value[$i].'" disabled></div>');
+	}
+	//opened boxes
+	else{
+		echo('<div class="boxopened">$'.$value[$i].'</div>');
+	}
+}
+for($i = 0; $i <= 25; ++$i){
+	if($status1[$i] == 1){
+		$clearvalue = $value[$i];
+	}
+}
+//$_SESSION['Takeout'] +=  $clearvalue;
+
+if($count == 25)
+{
+	echo ('<h1 id="h11">You won the amount: $'.$clearvalue.'</h1>');
+	$nickname = $_SESSION['Nickname'];
+	$userscore = array($nickname, $clearvalue);
+	$to_write = implode(",", $userscore);
+	print_r($to_write);
+	//Write to file
+	file_put_contents("leaderboard.txt", PHP_EOL.$to_write, FILE_APPEND);
+}
+?>
+	<input type="submit" value="Submit">
+</form>
+<div id="smallMoneys" class="moneys">
+<?php
+$rewardLeft = $_SESSION['Rewardleft'];
+//$leftfile = file("rewardleft.txt");
+for($i = 0; $i <= 12; ++$i){
+	if((($clearvalue <= 750) && ($rewardLeft[$i] == $clearvalue)) || $rewardLeft[$i] == 0){
+		$rewardLeft[$i] = 0;
+		echo ('<div class="moneyleft"></div>');
+	}
+	else{
+		echo ('<div class="moneyleft"><h3> $'.$rewardLeft[$i].'</h3></div>');
+	}
+}
+$_SESSION['Rewardleft'] = $rewardLeft;
+
+?>
+</div>
+
+<div id="bigMoneys" class="moneys">
+<?php
+
+$rewardRight = $_SESSION['Rewardright'];
+//$rightfile = file("rewardright.txt");
+for($i = 0; $i <= 12; ++$i){
+	if((($clearvalue >= 1000) && ($rewardRight[$i] == $clearvalue)) || $rewardRight[$i] == 0){
+		$rewardRight[$i] = 0;
+		echo ('<div class="moneyright"></div>');
+		
+	}
+	else{
+		echo ('<div class="moneyright"><h3> $'.$rewardRight[$i].'</h3></div>');
+	}
+}
+$_SESSION['Rewardright'] = $rewardRight;
+
+?>
+</div>
+
 	<div id="bank">
 		<div id="bankContent">
 			<img class="bankLogo"src="https://i.ibb.co/s9HN0Xn/bankimg.png">
@@ -86,63 +173,7 @@
 			<button id="changeBox" class="buttons">Change It!</button>
 		</div>
 	</div>
-	<div id="chooseBox">
-		<div id="chooseBoxContent">
-			<div class="chooseBoxText">Pick a box from 1 to 24!</div>
-			<button class="chooseBoxButton">1</button>
-			<button class="chooseBoxButton">2</button>
-			<button class="chooseBoxButton">3</button>
-			<button class="chooseBoxButton">4</button>
-			<button class="chooseBoxButton">5</button>
-			<button class="chooseBoxButton">6</button>
-			<button class="chooseBoxButton">7</button>
-			<button class="chooseBoxButton">8</button>
-			<button class="chooseBoxButton">9</button>
-			<button class="chooseBoxButton">10</button>
-			<button class="chooseBoxButton">11</button>
-			<button class="chooseBoxButton">12</button>
-			<button class="chooseBoxButton">13</button>
-			<button class="chooseBoxButton">14</button>
-			<button class="chooseBoxButton">15</button>
-			<button class="chooseBoxButton">16</button>
-			<button class="chooseBoxButton">17</button>
-			<button class="chooseBoxButton">18</button>
-			<button class="chooseBoxButton">19</button>
-			<button class="chooseBoxButton">20</button>
-			<button class="chooseBoxButton">21</button>
-			<button class="chooseBoxButton">22</button>
-			<button class="chooseBoxButton">23</button>
-			<button class="chooseBoxButton">24</button>
-			<div>
-				<button id="seeTutorialButton">See Tutorial</button>
-			</div>
-		</div>
-	</div>
-	<div id="tutorial">
-		<div id="tutorialContainer">
-			<img class="logoImg" src="dealLogo.png">
-			<div class="text">
-				<ol>
-					<li>Pick a box from 1-24 where you think the $1 000 000 is hiding.</li>
-					<li>Open boxes that you think have lower amounts. The money in the opened boxes is removed.</li>	
-					<li>Every few boxes you open (5, 10, 15, 18 and 21), the bank offers a deal. You have two options:
-						<ul>
-							<li>Take the deal: the game is over and you walk out with the deal amount.</li>
-							<li>Decline the deal: continue opening more boxes.</li>
-						</ul>
-					</li>
-					<li>Once only 2 boxes remain (the one you picked and one other box), you again have two options:
-						<ul>
-							<li>Keep the box you chose.</li>
-							<li>Change your box for the other box.</li>
-						</ul>
-					</li>
-				</ol>
-				<p>*Disclaimer: You don't actually win the money!</p>
-				<button id="tutorialButton" class="buttons">Got It!</button>
-			</div>
-		</div>
+	
 	</div>
 </body>
-	<script type="text/javascript" src="dealOrNoDeal.js"></script>
 </html>
