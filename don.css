@@ -1,0 +1,327 @@
+html {
+    height: 100%;
+}
+body {
+	background: #1B323A;
+	background: -moz-linear-gradient(left, #1B323A 0%, #1C6EA4 50%, #1B323A 100%);
+	background: -webkit-linear-gradient(left, #1B323A 0%, #1C6EA4 50%, #1B323A 100%);
+	background: linear-gradient(to right, #1B323A 0%, #1C6EA4 50%, #1B323A 100%);
+	color: white;
+	margin:0px;
+}
+button {
+	font-family: 'Michroma', sans-serif;
+}
+h3{
+	margin:0;
+}
+#logo {
+	text-align: center;
+}
+.logoImg {
+	width: 500px;
+	padding: 30px 0px;
+}
+#boxContainer {
+	width: 72vw;
+	height: 70vh;
+	margin: 0 auto;
+	align-content: center;
+	text-align: center;
+}
+.box {
+	position: relative;
+	width: 20%;
+	margin: 1% 1%;
+	height: 8.5vh;
+	background: #DDD;
+	display: inline-block;
+	text-align: center;
+	transition: all 0.5s;
+	line-height: 8.5vh;
+	color: #b50600;
+	font-weight: 900;
+	border-radius: 10px;
+	border: 3px solid #DDD;
+}
+
+.boxpick {
+	position: relative;
+	width: 20%;
+	margin: 1% 1%;
+	height: 8.5vh;
+	background: #CA7713;
+	display: inline-block;
+	text-align: center;
+	transition: all 0.5s;
+	line-height: 8.5vh;
+	color: #b50600;
+	font-weight: 900;
+	border-radius: 10px;
+	border: 3px solid #DDD;
+}
+.boxopened {
+	position: relative;
+	width: 20%;
+	margin: 1% 1%;
+	height: 8.5vh;
+	background: transparent;
+	display: inline-block;
+	text-align: center;
+	transition: all 0.5s;
+	line-height: 8.5vh;
+	color: white;
+	font-weight: 900;
+	border-radius: 10px;
+	border: 3px solid #DDD;
+}
+.box:hover {
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6), 0 6px 20px 0 rgba(0,0,0,0.6);
+	border: 3px solid #c8a913;
+	cursor: pointer;
+}
+
+#bigMoneys {
+	right: 0;
+}
+#smallMoneys {
+	left: 0;
+}
+.moneys {
+	display: inline-block;
+	position: fixed;
+  	width: 17vw;
+  	top: 10vh;
+	border-radius:10px;
+}
+.moneyleft{
+	color: #FFF;
+	font-weight: 900;
+	transition: all 1s;
+	background-color: #50589b;
+	border-radius: 10px;
+	width: 100%;
+	height: 6vh;
+	line-height: 6vh;
+	margin-bottom: 0.3vh;
+	border: 2px solid #c8a913;
+	position: relative;
+	text-align: center;
+}
+.moneyright{
+	color: #FFF;
+	font-weight: 900;
+	transition: all 1s;
+	background-color: #914242;
+	border-radius: 10px;
+	width: 100%;
+	height: 6vh;
+	line-height: 6vh;
+	margin-bottom: 0.3vh;
+	border: 2px solid #c8a913;
+	position: relative;
+	text-align: center;
+}
+
+
+#finished{
+	display: block;
+	position: absolute;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 1100px;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0,0.4);
+	transition: all 0.5s;
+}
+#lastDeal{
+	display: block;
+	position: absolute;
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 1100px;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0,0.4);
+	transition: all 0.5s;
+}
+#chooseBox{
+	display: block;
+	position: absolute;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 1100px;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0,0.4);
+	transition: all 0.5s;
+}
+#bank {
+	display: block;
+	position: fixed;
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0,0.4);
+	transition: all 0.5s;
+}
+.div5{
+	display: grid;
+    justify-content: center;
+    align-content: center;
+    gap: 4px;
+    grid-auto-flow: column;
+}
+#bankContent{
+	background-color: #FFF;
+	padding: 20px;
+	border: 4px solid #ffe900;
+	width: 60%;
+	margin: 0 auto;
+	text-align: center;
+	transition: all 0.5s;
+	margin-top: 15vh;
+	border-radius: 10px
+}
+#finishedContent{
+	background-color: #FFF;
+	padding: 20px;
+	border: 4px solid #ffe900;
+	width: 60%;
+	margin: 0 auto;
+	text-align: center;
+	transition: all 0.5s;
+	margin-top: 15vh;
+	border-radius: 10px
+}
+#lastDealContent{
+	background-color: #e90d0d;
+	padding: 20px;
+	border: 4px solid #ffe900;
+	width: 60%;
+	margin: 0 auto;
+	text-align: center;
+	transition: all 0.5s;
+	margin-top: 15vh;
+	border-radius: 10px
+}
+#finishedContent {
+	background-image: url(./Pics/crag.jpg);
+	background-position: center;
+	min-height: 40vh;
+	padding-top: 25vh;
+	text-shadow:1px 1px 30px #c8a913, 1px 1px 30px #c8a913;
+	background-size: cover;
+}
+#bankContent {
+    background-color: #FEFBC4;
+	background-image: url(./Pics/bankbg.jpg);
+	background-position: center;
+	background-size: 650px;
+}
+
+.bankLogo {
+	height: 100px;
+	width: auto;
+}
+button {
+	height: 60px;
+	line-height: 20px;
+	font-size: 20px;
+	color: red;
+	width: 200px;
+	text-transform: uppercase;
+	font-weight: 900;
+	margin: 10px;
+	background-color:transparent;
+	border: 0px;
+	cursor: pointer;
+}
+
+.bankTitle {
+	font-size: 30px;
+	font-weight: 700;
+	padding-top: 30px;
+	color: red;
+}
+.bankOffer {
+	font-size: 40px;
+	font-weight: 900;
+	padding: 30px;
+	color: red;
+}
+#yesDeal, #keepBox {
+	background: #dbc661;
+	border: 4px solid #d92020;
+	color: #b12222;
+}
+#noDeal, #changeBox {
+	background: #a32727;
+	border: 4px solid #c8a913;
+	color: #c8a913;
+}
+#keepBox, #changeBox {
+	font-size: 20px;
+}
+#prevOffers {
+	font-weight: 700;
+	padding: 20px;
+	font-size: 20px;
+	color: black;
+}
+
+.wintext {
+	font-weight: 700;
+	font-size: 20px;
+	color: #fff700;
+}
+.text {
+	font-size: 20px;
+}
+#winnings {
+	padding: 20px;
+	font-weight: 900;
+	font-size: 60px;
+	color:#fff700;
+}
+#h11{
+	text-align:center;
+	margin:0px;
+	padding:0px;
+}
+#leaderboard{
+	margin-left: 50px;
+    width: 400px;
+    background: rgb(253 253 255 / 85%);
+    border-radius: 10px;
+    color: red;
+    padding-top: 5px;
+	padding-left: 10px;
+	font-size:20px;
+}
+#tutorial {
+	width: 600px;
+    background: rgb(253 253 255 / 85%);
+    margin: auto;
+    border-radius: 10px;
+    color: red;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+#tutorialButton {
+	background: #c8a913;
+	background-image: url(https://i.ibb.co/Hrb4fzt/gold.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border: 4px solid #000000;
+	color: #000000;
+	font-size: 20px;
+}

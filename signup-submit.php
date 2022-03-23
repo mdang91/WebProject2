@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Sign Up</title>
-<link href="game4u.css" type="text/css" rel="stylesheet" />
-<link href="./Pics/heart.png" type="image/gif" rel="shortcut icon" />
+<link href="g4.css" type="text/css" rel="stylesheet" />
+<link href="./Pics/icon.png" type="image/gif" rel="shortcut icon" />
 </head>
 
 <?php
@@ -32,7 +32,6 @@ if(isset($nickname)){
     $user['nickname'] = ($nickname);
 }
 
-//EXTRA FEATURES: #1 Checking errors
 //Store errors into an array
 $errors = array();
 //Name cannot be digits.
@@ -49,7 +48,7 @@ if ($nickname == ''){
     $errors[] = "Nickname must not be blank.";
 }
 
-//No user will resubmit data for a name already in the system
+//F5 page will resubmit data, function check if a name already in the system
 $userlist = file("userlist.txt");
 if ($username != ''){
 	for ($i = 0; $i < count($userlist); $i++){
@@ -80,7 +79,7 @@ if (empty($errors)){
 <div class="div1" >
 <h1>Sign Up Succesful!</h1>
 <br>
-<p>Welcome to Game4U, <?= $user["name"] ?>!</p>
+<p>Welcome to Group4, <?= $user["name"] ?>!</p>
 <br>
 <p>Now <a href="login.php">log in to start playing!</a></p>
 </div>

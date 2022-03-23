@@ -3,7 +3,6 @@
 /* Check Login form submitted */	
 if(isset($_POST['Submit'])){
 	$userlist = file("userlist.txt");
-	print_r($userlist);
 	$credentials = array();
 	
 	foreach($userlist as $userlist){
@@ -67,17 +66,20 @@ if(isset($_POST['Submit'])){
 <html>
 <head>
 <meta charset="utf-8">
-<title>Game4U Login</title>	
+<title>Group4 Login</title>	
 <link href="./css/style.css" rel="stylesheet">
-<link href="game4u.css" type="text/css" rel="stylesheet" />
-<link href="./Pics/heart.png" type="image/gif" rel="shortcut icon" />
+<link href="g4.css" type="text/css" rel="stylesheet" />
+<link href="./Pics/icon.png" type="image/gif" rel="shortcut icon" />
 </head>
+
 <body>
+<!-- Logo -->
 <div class="div0">
 <img src="./Pics/logo.png" alt="image" />
-
 </div>
-<form action="" method="post" name="Login_Form">
+
+<!-- Log in form -->
+<form action="" method="post" name="Login_Form" class="form1">
 <table class="table1" width="400" border="0" align="center" cellpadding="5" cellspacing="1">
     <?php if(isset($msg)){?>
     <tr>

@@ -4,8 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Sign Up</title>
-<link href="game4u.css" type="text/css" rel="stylesheet" />
-<link href="./Pics/heart.png" type="image/gif" rel="shortcut icon" />
+<link href="g4.css" type="text/css" rel="stylesheet" />
+<link href="./Pics/icon.png" type="image/gif" rel="shortcut icon" />
 </head>
 <body>
 <div class="div0">
@@ -15,7 +15,7 @@
 </div>
 
 <div class="div2">
-<form action="signup-submit.php" method="post">
+<form action="signup-submit.php" method="post" class="form1">
 <fieldset>
 <!-- Title -->
 <legend>New User Sign Up</legend>

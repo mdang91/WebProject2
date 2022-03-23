@@ -7,17 +7,15 @@ if(!isset($_SESSION['UserData']['Username'])){
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Welcome page -->
+<!-- Welcome -->
 <meta charset="UTF-8">
 <title>Welcome</title>
-<link href="game4u.css" type="text/css" rel="stylesheet" />
-<link href="./Pics/heart.png" type="image/gif" rel="shortcut icon" />
+<link href="g4.css" type="text/css" rel="stylesheet" />
+<link href="./Pics/icon.png" type="image/gif" rel="shortcut icon" />
 </head>
 
-<body>
-
+<body style="margin:0px;">
 <div>
 <div>
 <header class="banner app">
@@ -29,12 +27,12 @@ if(!isset($_SESSION['UserData']['Username'])){
 <div id="bannertext">
 	<ul class="ul1">
 		<li class="li1"><a href="#" class="a1">Home</a></li>
-		<li class="li1"><a href="#" class="a1">More Game</a></li>
-		<li class="li1"><a href="logout.php"> Log Out</a></li>
+		<li class="li1"><a href="g4.html" class="a1">About Us</a></li>
+		<li class="li1"><a href="logout.php">Log Out</a></li>
 	</ul>
 	
 <div class="div3">
-	<h1>Welcome back <?=$_SESSION['Nickname']?>!</h1><img class="img1" src="./Pics/user.png" alt="icon">
+	<h1 id="h13">Welcome back <?=trim($_SESSION['Nickname'])?>!</h1><img class="img1" src="./Pics/user.png" alt="icon">
 </div>
 </div>
 <!-- End navigation bar -->
@@ -47,7 +45,7 @@ if(!isset($_SESSION['UserData']['Username'])){
 <div class="div4">
 <h1 id="h12"> Game List </h1>
 <ul class="ul2">
-	<li class="li2"><a href="temp1.php">Deal or No Deal</a></li>
+	<li class="li2"><a href="don.php">Deal or No Deal</a></li>
 	<li class="li2"><a href="#">...</a></li>
 	<li class="li2"><a href="#">...</a></li>
 	<li class="li2"><a href="#">...</a></li>
