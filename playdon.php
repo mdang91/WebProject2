@@ -62,8 +62,8 @@ if(isset($_POST['actionkeep']))
 			$endgame = $value[$i];
 		}	
 	}
-	$userscore = array($nickname, $endgame);
-	$to_write = implode(":", $userscore);
+	$userscore = array($endgame, $nickname);
+	$to_write = implode("-", $userscore);
 	//Write to file
 	file_put_contents("leaderboard.txt", PHP_EOL.$to_write, FILE_APPEND);
 ?>
@@ -84,8 +84,8 @@ if(isset($_POST['actionchange']))
 		}	
 	}
 	
-	$userscore = array($nickname, $endgame);
-	$to_write = implode(":", $userscore);
+	$userscore = array($endgame, $nickname);
+	$to_write = implode("-", $userscore);
 	//Write to file
 	file_put_contents("leaderboard.txt", PHP_EOL.$to_write, FILE_APPEND);
 ?>
@@ -130,8 +130,8 @@ if($count == 25)
 {
 	echo ('<h1 id="h11">You won the amount: $'.$clearvalue.'</h1>');
 	echo ('<h2><a href="don.php">Exit</a></h2>');
-	$userscore = array($nickname, $clearvalue);
-	$to_write = implode(":", $userscore);
+	$userscore = array($clearvalue, $nickname);
+	$to_write = implode("-", $userscore);
 	//Write to file
 	file_put_contents("leaderboard.txt", PHP_EOL.$to_write, FILE_APPEND);
 }
@@ -210,8 +210,8 @@ if($count == 6 || $count == 11 || $count == 15 || $count == 18 || $count == 21)
 if(isset($_POST['actiondeal']))
 {
 
-	$userscore = array($nickname, bankoffer());
-	$to_write = implode(":", $userscore);
+	$userscore = array(bankoffer(), $nickname);
+	$to_write = implode("-", $userscore);
 	//Write to file
 	file_put_contents("leaderboard.txt", PHP_EOL.$to_write, FILE_APPEND);
 ?>	
