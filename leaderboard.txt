@@ -1,4 +1,12 @@
-Ladygaga:750000
-NoStar:250000
-Killer:100000
-Killer:79901.08
+750000-Ladygaga
+250000-NoStar
+20-Test
+100000-Killer
+79901.08-Killer
+10000-Test6
+2500-Test7456546
+50-Test8
+10-Test9
+13-Test10
+20-Test11
+500-Test12345

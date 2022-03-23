@@ -53,9 +53,17 @@ top();
 <h1 id="h11"> Leader Board </h1>
 <?php
 $userlead = file("leaderboard.txt");
-foreach($userlead as $var){
-	echo ('<ul><li>'.$var.'</li></ul>');
+foreach($userlead as $line_num => $line) {
+	$str_arr[] = explode("-", $line);
 }
+
+sort($str_arr);
+
+for($x=1;$x<11;$x++) {
+	echo ($x).'. '.$str_arr[count($str_arr) - $x][1].': ' .$str_arr[count($str_arr) - $x][0];
+	echo "<br>";
+}
+
 ?>
 </div>
 </div>
